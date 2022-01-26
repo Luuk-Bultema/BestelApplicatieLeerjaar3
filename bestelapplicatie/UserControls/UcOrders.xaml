@@ -1,0 +1,44 @@
+﻿<UserControl x:Class="bestelapplicatie.UserControls.UcOrders"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:bestelapplicatie.UserControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="809" d:DesignWidth="1592" Background="White">
+    <Grid>
+        <Button x:Name="btnAddToOrder" Content="Toevoegen aan bestelling" HorizontalAlignment="Left" Margin="55,255,0,0" VerticalAlignment="Top" Width="195" Height="35" Click="btnAddToOrder_Click"/>
+        <Label Content="Producttype" HorizontalAlignment="Left" Margin="50,143,0,0" VerticalAlignment="Top"/>
+        <Label Content="Product" HorizontalAlignment="Left" Margin="50,175,0,0" VerticalAlignment="Top"/>
+        <Label Content="Aantal" HorizontalAlignment="Left" Margin="50,206,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="cmbProducttype" HorizontalAlignment="Left" Margin="130,143,0,0" VerticalAlignment="Top" Width="120" DisplayMemberPath="producttypeomschrijving" SelectionChanged="cmbProducttype_SelectionChanged"/>
+        <ComboBox x:Name="cmbProduct" HorizontalAlignment="Left" Margin="130,177,0,0" VerticalAlignment="Top" Width="120"  DisplayMemberPath="productName"/>
+        <DataGrid x:Name="dgbestelling" HorizontalAlignment="Left" Height="315" Margin="400,125,0,0" VerticalAlignment="Top" Width="210">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Product" Binding="{Binding product.productName}"/>
+                <DataGridTextColumn Header="Aantal" Binding="{Binding amount}"/>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="btnDeleteIPO" Content="Verwijderen" Click="btnDeleteIPO_Click"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                
+                
+            </DataGrid.Columns>
+        </DataGrid>
+        <TextBox x:Name="txtAantal" HorizontalAlignment="Left" Height="23" Margin="130,218,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Klant: " HorizontalAlignment="Left" Margin="47,25,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="cmbCustomer" HorizontalAlignment="Left" Margin="95,25,0,0" VerticalAlignment="Top" Width="200" Height="26" DisplayMemberPath="lastname" SelectionChanged="cmbCustomer_SelectionChanged"/>
+        <Grid Margin="970,51,324,609.8">
+            <Label x:Name="lblLastname" Content="Achternaam" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+            <Label x:Name="lblFirstname" Content="Voornaam" HorizontalAlignment="Left" Margin="10,36,0,0" VerticalAlignment="Top"/>
+            <Label x:Name="lblCity" Content="Woonplaats" HorizontalAlignment="Left" Margin="10,62,0,0" VerticalAlignment="Top"/>
+            <Label x:Name="lblPhonenumber" Content="Telefoonnummer" HorizontalAlignment="Left" Margin="10,88,0,0" VerticalAlignment="Top"/>
+            <Label x:Name="lblEmail" Content="E-mail" HorizontalAlignment="Left" Margin="10,114,0,0" VerticalAlignment="Top"/>
+        </Grid>
+        <Button x:Name="btnOrder" Content="Plaats Bestelling" HorizontalAlignment="Left" Margin="720,255,0,0" VerticalAlignment="Top" Width="175" Height="35" Click="btnOrder_Click"/>
+
+    </Grid>
+</UserControl>

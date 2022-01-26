@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="dcKassa">
+  <DataContextMoniker Name="/dcKassaDataContext" />
+  <nestedChildShapes>
+    <classShape Id="a0b366cf-0925-495c-824a-57f18d274823" absoluteBounds="0.75, 0.75, 2, 1.9631982421875">
+      <DataClassMoniker Name="/dcKassaDataContext/customer" />
+      <nestedChildShapes>
+        <elementListCompartment Id="26a4e64c-03f4-4515-8da3-a711c698d304" absoluteBounds="0.765, 1.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9ff57071-c822-4170-a683-9de3b6a431f7" absoluteBounds="0.875, 3.875, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/dcKassaDataContext/itemperorder" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ebb5dd2c-9df2-4aa6-b793-41faec1e5713" absoluteBounds="0.89000000000000012, 4.335, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="949355b1-8ae7-4349-9cd0-0cb951365f4b" absoluteBounds="4.5, 1.625, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/dcKassaDataContext/order" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d7e310dc-37f6-499d-94e8-9728c1f2c0f0" absoluteBounds="4.515, 2.085, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="114d667d-5b45-4228-aebd-3c4e0fc3bc0d" absoluteBounds="4.625, 4.5, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/dcKassaDataContext/product" />
+      <nestedChildShapes>
+        <elementListCompartment Id="22b50c93-e86c-43b7-a0d1-9a216f702379" absoluteBounds="4.6400000000000006, 4.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0ba57b39-6c23-41bb-966e-64bd7cbab59f" absoluteBounds="6.75, 0.75, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/dcKassaDataContext/producttype" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2dcee576-e162-429f-bd11-c5685d43db2c" absoluteBounds="6.765, 1.21, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(7.75 : 1.94399251302083); (7.75 : 5.28929768880208); (6.625 : 5.28929768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dcKassaDataContext/producttype/producttype_product" />
+      <nodes>
+        <classShapeMoniker Id="0ba57b39-6c23-41bb-966e-64bd7cbab59f" />
+        <classShapeMoniker Id="114d667d-5b45-4228-aebd-3c4e0fc3bc0d" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.625 : 4.97679768880208); (2.875 : 4.97679768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dcKassaDataContext/product/product_itemperorder" />
+      <nodes>
+        <classShapeMoniker Id="114d667d-5b45-4228-aebd-3c4e0fc3bc0d" />
+        <classShapeMoniker Id="9ff57071-c822-4170-a683-9de3b6a431f7" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.53125 : 3.0112939453125); (4.53125 : 4.15625); (2.875 : 4.15625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dcKassaDataContext/order/order_itemperorder" />
+      <nodes>
+        <classShapeMoniker Id="949355b1-8ae7-4349-9cd0-0cb951365f4b" />
+        <classShapeMoniker Id="9ff57071-c822-4170-a683-9de3b6a431f7" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 2.16909912109375); (4.5 : 2.16909912109375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dcKassaDataContext/customer/customer_order" />
+      <nodes>
+        <classShapeMoniker Id="a0b366cf-0925-495c-824a-57f18d274823" />
+        <classShapeMoniker Id="949355b1-8ae7-4349-9cd0-0cb951365f4b" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
